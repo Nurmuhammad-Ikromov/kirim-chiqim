@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/", userRoutes);
 app.use("/", transactionRoutes);
+app.options('*', cors()); // Allow preflight requests
 
 try {
   await newMongoConnection();
