@@ -3,6 +3,7 @@ import ExpenseModel from "../models/ExpenseModel.js"; // To'g'ri eksport/importn
 // Add Expense
 const addExpense = async (req, res) => {
   const { title, amount, category, description, date } = req.body;
+  console.log(req.body);
 
   try {
     // Validations

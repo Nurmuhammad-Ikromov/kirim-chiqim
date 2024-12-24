@@ -2,6 +2,8 @@ import IncomeModel from "../models/incomeModel.js";
 
 const addIncome = async (req, res) => {
   const { title, amount, category, description, date } = req.body;
+  console.log(req.body);
+
   try {
     //validations
     if (!title || !category || !description || !date) {
@@ -12,7 +14,7 @@ const addIncome = async (req, res) => {
         .status(400)
         .json({ message: "Amount must be a positive number!" });
     }
-    const data = await IncomeModel.create({
+    const data = new IncomeModel({
       title,
       amount,
       category,
