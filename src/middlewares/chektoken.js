@@ -24,6 +24,7 @@ export default (req, res, next) => {
         });
       }
       console.log(decoded);
+      
       console.log(req.ip);
 
       req.user = decoded;
