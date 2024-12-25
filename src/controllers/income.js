@@ -12,7 +12,7 @@ const addIncome = async (req, res) => {
     if (amount <= 0 || !amount === "number") {
       return res
         .status(400)
-        .json({ message: "Amount must be a positive number!" });
+        .send({ message: "Amount must be a positive number!" });
     }
     const data = new IncomeModel({
       title,
@@ -27,7 +27,7 @@ const addIncome = async (req, res) => {
       data: [data],
     });
   } catch (error) {
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).send({ message: "Server Error" });
   }
 };
 
