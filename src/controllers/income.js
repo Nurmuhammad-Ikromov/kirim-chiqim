@@ -38,7 +38,7 @@ const getIncomes = async (req, res) => {
     const data = await IncomeModel.find();
     return res.status(200).send(data);
   } catch (error) {
-    return res.status(500).json({ message: "Server Error" });
+    return res.status(500).send({ message: "Server Error" });
   }
 };
 
