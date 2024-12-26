@@ -8,7 +8,7 @@ const addExpense = async (req, res) => {
   try {
     // Validations
     if (!title || !category || !description || !date) {
-      return res.status(400).json({ message: "All fields are required!" });
+      return res.status(400).send({ message: "All fields are required!" });
     }
     if (amount <= 0 || typeof amount !== "number") {
       return res
@@ -32,7 +32,7 @@ const addExpense = async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: "Server Error" });
+    return res.status(500).send({ message: "Server Error" });
   }
 };
 
@@ -43,7 +43,7 @@ const getExpense = async (req, res) => {
     return res.status(200).send(data);
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: "Server Error" });
+    return res.status(500).send({ message: "Server Error" });
   }
 };
 
@@ -66,7 +66,7 @@ const deleteExpense = async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: "Server Error" });
+    return res.status(500).send({ message: "Server Error" });
   }
 };
 

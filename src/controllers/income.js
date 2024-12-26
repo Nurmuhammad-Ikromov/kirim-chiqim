@@ -19,14 +19,17 @@ const addIncome = async (req, res) => {
       amount,
       category,
       description,
-      date,
     });
+    await data.save();
+    
     return res.status(200).send({
       message: "Income Added",
       status: 200,
       data: [data],
     });
   } catch (error) {
+    console.log(error);
+    
     res.status(500).send({ message: "Server Error" });
   }
 };
