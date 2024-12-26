@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const IncomeSchema = new mongoose.Schema(
   {
@@ -34,4 +34,4 @@ const IncomeSchema = new mongoose.Schema(
 
 const IncomeModel = mongoose.model("Income", IncomeSchema);
 
-export default IncomeModel;
+module.exports = IncomeModel;

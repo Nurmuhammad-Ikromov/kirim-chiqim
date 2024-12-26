@@ -9,7 +9,7 @@ export const register = async (req, res) => {
 
     // Ma'lumotlar validatsiyasi
     if (!last_name || !first_name || !email || !password || !age) {
-      return res.status(400).json({ message: "All fields are required!" });
+      return res.status(400).send({ message: "All fields are required!" });
     }
 
     if (age < 0 || typeof age !== "number") {
